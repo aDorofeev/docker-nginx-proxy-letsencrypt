@@ -81,7 +81,7 @@ server {
 	listen [::]:80;
 	{{ end }}
 	access_log /var/log/nginx/access.log vhost;
-	location {
+	location / {
 		return 503;
 	}
 }
