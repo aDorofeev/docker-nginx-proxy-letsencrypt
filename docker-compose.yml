@@ -13,6 +13,8 @@ services:
       - "/etc/nginx/vhost.d"
       - "/usr/share/nginx/html"
       - "./volumes/certs:/etc/nginx/certs:ro"
+    environment:
+      - DOCKER_HOST_HOSTNAME=${DOCKER_HOST_HOSTNAME}
     networks:
       - proxy-tier
 
