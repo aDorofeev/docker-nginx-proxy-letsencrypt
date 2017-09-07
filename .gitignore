@@ -1,3 +1,2 @@
 volumes/certs
-volumes/templates
 .env
