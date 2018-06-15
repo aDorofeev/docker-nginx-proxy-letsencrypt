@@ -11,7 +11,7 @@ Compose config for fully automated nginx proxy with letsencrypt support (uses do
 ### Setting up things
 Clone repository to location on your choice: 
 ```bash
-git clone https://github.com/aDorofeev/docker-nginx-proxy-letsencrypt/new/master?readme=1 nginx-proxy
+git clone https://github.com/aDorofeev/docker-nginx-proxy-letsencrypt nginx-proxy
 ```
 Create bridge network, that would allow nginx container to communicate with your projects:
 ```bash
