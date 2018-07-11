@@ -17,8 +17,8 @@ services:
       - "443:443"
     volumes:
       - nginx_conf:/etc/nginx/conf.d
-      - nginx_vhost:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
+      - "./volumes/includes:/etc/nginx/vhost.d:ro"
       - "./volumes/certs:/etc/nginx/certs:ro"
       - "./volumes/htpasswd:/etc/nginx/htpasswd:ro"
     environment:
@@ -36,8 +36,8 @@ services:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
       - "./volumes/templates/nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro"
       - nginx_conf:/etc/nginx/conf.d
-      - nginx_vhost:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
+      - "./volumes/includes:/etc/nginx/vhost.d:ro"
       - "./volumes/certs:/etc/nginx/certs:ro"
       - "./volumes/htpasswd:/etc/nginx/htpasswd:ro"
     entrypoint: /bin/sh -c
