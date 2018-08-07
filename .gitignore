@@ -1,4 +1,6 @@
 volumes/certs
 volumes/htpasswd
 !volumes/htpasswd/.gitkeep
+volumes/includes
+!volumes/includes/.gitkeep
 .env

@@ -8,9 +8,10 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./volumes/certs:/etc/nginx/certs:rw"
+      - "./volumes/includes:/etc/nginx/vhost.d:rw"
       - nginx_conf:/etc/nginx/conf.d
-      - nginx_vhost:/etc/nginx/vhost.d
       - nginx_html:/usr/share/nginx/html
     environment:
       - NGINX_DOCKER_GEN_CONTAINER=nginx-gen
+      - NGINX_PROXY_CONTAINER=nginx
 
