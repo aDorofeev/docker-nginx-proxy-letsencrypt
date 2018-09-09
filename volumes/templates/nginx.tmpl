@@ -289,6 +289,7 @@ server {
 		include fastcgi.conf;
 		fastcgi_pass {{ trim $upstream_name }};
 		{{ else }}
+	    include proxy_params;
 		proxy_pass {{ trim $proto }}://{{ trim $upstream_name }};
 		{{ end }}
 
@@ -337,6 +338,7 @@ server {
 		include fastcgi.conf;
 		fastcgi_pass {{ trim $upstream_name }};
 		{{ else }}
+	    include proxy_params;
 		proxy_pass {{ trim $proto }}://{{ trim $upstream_name }};
 		{{ end }}
 		{{ if (exists (printf "/etc/nginx/htpasswd/%s" $host)) }}
